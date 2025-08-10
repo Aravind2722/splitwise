@@ -24,6 +24,9 @@ public class UserController {
         } catch (UserAlreadyExistsException e) {
             responseDto.setMessage(e.getMessage());
             responseDto.setResponseStatus(ResponseStatus.FAILURE);
+        } catch (Exception e) {
+            responseDto.setMessage("Something went wrong. Please try again later!");
+            responseDto.setResponseStatus(ResponseStatus.FAILURE);
         }
 
         return responseDto;

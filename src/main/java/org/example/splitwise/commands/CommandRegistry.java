@@ -12,12 +12,14 @@ public class CommandRegistry {
 
     @Autowired
     public CommandRegistry(
-            Command registerUserCommand,
-            Command exitCommand
+            RegisterUserCommand registerUserCommand,
+            ExitCommand exitCommand,
+            SettleUpUserCommand settleUpUserCommand
     ) {
         commands = new ArrayList<>();
         commands.add(registerUserCommand);
         commands.add(exitCommand);
+        commands.add(settleUpUserCommand);
     }
 
     public void execute(String input) {
